@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5f59ca6ad3.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        nav{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgb(240, 176, 176);
+            padding: 5px;
+        }
+
+        nav div:nth-child(2){
+            display: flex;
+            align-items: center;
+        }
+    
+        .epaperLog{
+            display: flex;
+        }
+
+        .epaperLog div:nth-child(1){
+            text-align: center;
+            margin-right: 5px;
+        }
+
+        header{
+            display: flex;
+            font-size: 12px;
+        }
+        header div{
+            background-color: gray;
+            padding: 8px;
+        }
+
+        header div{
+            border-right: 1px solid black;
+            
+        }
+
+        
+
+        header div:first-child{
+            background-color: rgb(206, 206, 206);
+        }
+
+        
+
+        header div:last-child{
+            border-right: none;
+        }
+
+        .covidNums{
+            margin-top: 10px;
+        }
+        .trackSection{
+            width: 500px;
+        }
+        .tracking{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .trackSection section{
+            background-color: rgb(218, 216, 216);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .casesRec{
+            border-right: 1px solid black;
+            height: 80px;
+        }
+
+        .trackResults div:last-child{
+            border-right: none;
+        }
+
+        aside div{
+            display: flex;
+        }
+        aside div p{
+            padding: 2px;
+        }
+
+        .vacination{
+            width: 200px;
+        }
+
+        .vacination div{
+            background-color: rgb(218, 216, 216);
+            height: 80px;
+        }
+
+        .vacination aside{
+            font-size: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .covidResources{
+            margin-top: 10px;
+        }
+
+        .resource{
+            display: flex;
+            
+        }
+
+        .resourceLists ul li{
+            list-style-type: none;
+            width: 200px;
+            height: 50px;
+        }
+
+        .resourceLists ul li:first-child{
+            background-color: yellow;
+        }
+
+        .resourceLists ul li{
+            background-color: gray;
+            border-bottom: 1px solid black;
+        }
+
+        .resourceLists ul li:last-child{
+            border-bottom: none;
+        }
+
+        .resourceLinks ul{
+            margin-left: 10px;
+        }
+        .resourceLinks ul li{
+            list-style-type: none;
+            border-bottom: 1px dashed black;
+            padding-bottom: 3px;
+        }   
+
+        .resourceLinks ul li:last-child{
+            border-bottom: none;
+        }
+
+
+        .resourceLinks ul li a{
+            text-decoration: none;
+        }
+
+        .services{
+            width: 400px;
+            margin-right: 5px;
+        }
+
+        .services h2{
+            background-color: rgb(163, 163, 163);
+        }
+
+        .servicesList{
+            display: flex;
+            padding: 5px;
+        }
+
+        
+
+        .servicesList li{
+            list-style-type: none;
+            width: 100px;
+            padding: 10px;
+            margin: 5px;
+            background-color: rgb(209, 198, 198);
+            font-size: 12px;
+        }
+
+        .servicesList li:first-child{
+            background-color: red;
+        }
+
+        .serviceLinks{
+            padding: 10px;
+        }
+
+        .helpList{
+            display: flex;
+            padding: 5px;
+        }
+
+        .help{
+            width: 500px;
+            margin-left: 5px;
+        }
+
+        .help h2{
+            background-color: rgb(163, 163, 163);
+        }
+
+        .helpList li{
+            list-style-type: none;
+            width: 100px;
+            padding: 10px;
+            margin: 5px;
+            background-color: rgb(209, 198, 198);
+            font-size: 12px;
+        }
+
+        .helpList li:first-child{
+            background-color: red;
+        }
+
+        .helpLinks{
+            padding-left: 10px;
+        }
+
+        .helpLinks li{
+            list-style-type: none;
+            border-bottom: 1px dashed black;
+            padding-bottom: 3px;
+        }
+
+        .search-list ul li{
+            padding: 10px;
+            width:100px;
+        }
+
+        .faqs ul li{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 5px;
+        }
+
+        .faqs ul li span{
+            width: 700px;
+        }
+
+        .latestNews{
+            display: flex;
+            justify-content: space-between;
+        }
+        .latestNews li{
+            width: 130px;
+            list-style-type: none;
+        }
+
+        footer{
+            background-color: rgb(92, 79, 214);
+            height: 40px;
+            position: relative;
+        }
+        
+        .footerText{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- navbar -->
+    <nav>
+        <div>
+            <i class="fas fa-bars"></i>
+            <span>Explore</span>
+            <!-- <ul>
+                <li></li>
+                <li></li>
+            </ul> -->
+        </div>
+        <div>
+            <img src="https://pngimg.com/uploads/twitter/twitter_PNG3.png" width="50px">
+            <span>Tweet News</span>
+        </div>
+        <div class="epaperLog">
+            <div>
+                <i class="far fa-newspaper"></i><br>
+                <span style="font-size: 14px;">E-Paper</span>
+            </div>
+            <div>
+                <p>Hi, Yashwanth</p>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div>
+            <strong>Latest: </strong><br>
+            <span>As on 3 Jan 2022</span>
+        </div>
+        <div>
+            <p>Total Number of vacinations done today: <span>17,53,569</span></p>
+        </div>
+        <div>
+            <p>Saphire Hospital, Delhi has 7 Non ICU Vacant Beds</p>
+        </div>
+        <div>
+            <p>Ekta Hospital LLP & ICCU, Mumbai has 3 ICU Vacant Beds...</p>
+        </div>
+    </header>
+
+    <article class="covidNums">
+        <h1>COVID - 19</h1>
+        <p>As India battles the deadly second wave of the coronavirus 
+            pandemic with cases surging every day, here are all the 
+            updates on the outbreak, vaccination and useful information 
+            in the fight against the virus</p>
+        <div style="display: flex;justify-content: space-between; margin-top: 10px;">
+        <section class="trackSection">
+            <div class="tracking">
+                <p>Tracker: INDIA</p>
+                <span>Select State</span>
+            </div>
+            <section class="trackResults">
+                <div class="casesRec">
+                    Total cases<br>
+                    <span>1,66,10,481</span>
+                    <div>
+                        <span>346786 ↑</span>
+                        <span>20.82</span>%
+                    </div>
+                </div>
+                <div class="casesRec">
+                    ACTIVE<br>
+                    <span>26,82,751</span>
+                    <div>
+                        <span>129811 ↑</span>
+                        <span>15.82</span>%
+                    </div>
+                </div>
+                <div class="casesRec">
+                    DISCHARGED<br>
+                    <span>1,40,85,110</span>
+                    <div>
+                        <span>217113 ↑</span>
+                        <span>83.05</span>%
+                    </div>
+                </div>
+                <div class="casesRec">
+                    DEATHS<br>
+                    <span>66,10,481</span>
+                    <div>
+                        <span>812 ↑</span>
+                        <span>1.13</span>%
+                    </div>
+                </div>
+            </section> 
+            <aside>
+                <div>
+                    <p>Last Updated: <span>3 Jan</span> at <span>8:00 A.M. </span><span>|</span></p>  
+                    <p>Source: MOHFW</p>
+                </div>
+            </aside>
+        </section>
+        <section class="vacination">
+            <p>VACCINATION</p>
+           <div>
+               Total Vaccinated <br>
+               <span>14,14,53,541</span><br>
+               VACINATED TODAY <br>
+               <span>11,91,82,028</span>
+           </div>
+           <aside>
+                <span>Source:COWIN</span>
+                <a href="#">How to register?</a>
+           </aside> 
+           
+        </section>
+    </div>
+    </article>
+
+    <article class="covidResources">
+        <h1>COVID RESOURCES</h1>
+        <!-- resources -->
+        <section class="resource">
+            <div class="resourceLists">
+                <ul>
+                    <li>All Resources</li>
+                    <li>Hospital Beds</li>
+                    <li>Oxygen Cylinders</li>
+                    <li>Plasma</li>
+                    <li>Medicines</li>
+                </ul>
+            </div>
+            <div class="resourceLinks">
+                <ul>
+                    <li>
+                        <a href="#">covid19sos.glideapp.io</a>
+                        <p>An open-source request tracker, the platform allows people to submit their emergency needs</p>
+                    </li>
+                    <li>
+                        <a href="#">covid19-twitter.in,</a>
+                        <p>The website enerates links to Twitter search that helps to find resources for Covid-19.</p>
+                    </li>
+                    <li>
+                        <a href="#">covidresources.netlify.app </a>
+                        <p>The web application is updated regularly with all the latest Covid resources.</p>
+                    </li>
+                    <li>
+                        <a href="#">covid19sos.glideapp.io</a>
+                        <p>The web application is updated regularly with all the latest Covid resources.</p>
+                    </li>
+                    <li>
+                        <a href="#">covid19-twitter.in,</a>
+                        <p>The website enerates links to Twitter search that helps to find resources for Covid-19.
+                        </p>
+                    </li>
+                    <li>
+                        <a href="#">covidresources.netlify.app</a>
+                        <p>The web application is updated regularly with all the latest Covid resources.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <div style="display: flex; margin-top: 10px;">   
+            <section class="services">
+                <h2>SERVICES</h2>
+                <div>
+                    <ul class="servicesList">
+                        <li>TIFFIN SERVICES</li>
+                        <li>HOME CARE</li>
+                        <li>FUNERAL SERVICES</li>
+                        <li>PET CARE</li>
+                    </ul>
+                    <div>
+                        <ul class="serviceLinks">
+                            <li>
+                                <a href="#">portea.com</a>
+                                <p>Stay I @HOME from is a monitored Home Isolation service offered by Portea to covid victims.
+                                </p>
+                            </li>
+                            <li>
+                                <a href="#">Apollohealthcare
+                                </a>
+                                <p>monitored Home Isolation service offered by Apollo Homecare during coven
+                                </p>
+                            </li>
+                            <li>
+                                <a href="#">portea.com
+                                </a>
+                                <p>
+                                    Stay I @HOME from is a monitored Home Isolation service offered by Portea to covid victims.
+                                </p>
+                            </li>
+                            <li>
+                                <a href="#">Apollohealthcare
+                                </a>
+                                <p>
+                                    monitored Home Isolation service offered by Apollo Homecare during covid
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="help">
+                <h2>How to help</h2>
+                <div>
+                    <ul class="helpList">
+                        <li>BE A VOLUNTEER</li>
+                        <li>DONATION</li>
+                    </ul>
+                    <div>
+                        <ul class="helpLinks">
+                            <li>
+                                <a href="#">mygov.in/task/join-war-against-covid-19-register-volunteer/
+                                </a>
+                                <p>
+                                    Join the war against COVID-19 - Register as Volunteer
+                                </p>
+                            </li>
+                            <li>
+                                <a href="#">covidivolunteer.in
+                                </a>
+                                <p>
+                                    Register as Volunteer in the battle against cover
+                                </p>
+                            </li>
+                            <li>
+                                <a href="#">mygov.in/task/join-war-against-covid-19-register-volunteer/
+                                </a>
+                                <p>
+                                    Join the war against COVID-19 - Register as Volunteer
+
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </section>
+        </div>
+        
+    </article>
+    <article>
+        
+        <div style="display: flex;align-items: center;">
+            <div>
+                <h1>FREQUENTLY ASKED QUESTIONS</h1>
+                <input type="search" class="searchBar" style="width: 250px;" placeholder="Type to search">
+                <div class="search-list">
+                    <ul style="display: flex;list-style-type: none;">
+                        <li>Vaccination</li>
+                        <li>Plasma Donation</li>
+                        <li>General</li>
+                    </ul>
+                </div>   
+            </div>
+            <div>
+                <img src="https://image.shutterstock.com/image-vector/medical-concept-hospital-building-doctor-260nw-588196298.jpg" width="300px">
+            </div>
+        </div>
+        <section class="faqs">
+            <ul>
+                <li>
+                    <span>
+                        Is it necessary for a COVID-19 recovered person to take the vaccine? And if I had COVID-19 infection and was treated, why should I receive the vaccine?
+                    </span>
+                    <i class="fas fa-plus-circle"></i>
+                </li>
+                <li>
+                    <span>
+                        How do I pre-register myself online for an appointment for vaccination?
+                    </span>
+                    <i class="fas fa-plus-circle"></i>
+                </li>
+                <li>
+                    <span>
+                        If I cannot pre-register myself online, how do I register on the spot and get vaccinated?
+                    </span>
+                    <i class="fas fa-plus-circle"></i>
+                </li>
+                <li>
+                    <span>
+                        Will vaccinated beneficiaries receive information on the status of their vaccination after completion?
+                    </span>
+                    <i class="fas fa-plus-circle"></i>
+                </li>
+            </ul>
+            <div style="display:flex; justify-content: center;margin-top: 5px;">
+                <button>See all</button>
+            </div>
+        </section>
+    </article>
+    <article style="margin-top: 10px;">
+        <h1>Latest News</h1>
+        <ul class="latestNews">
+            <li>
+                <img src="https://www.indiaspend.com/h-upload/2020/12/17/359858-covid-19-retrospective1600.jpg" width="120px">
+                <p>Court asks Delhi government to arrange tankers for liquid oxygen amid shortage</p>
+            </li>
+            <li>
+                <img src="https://assets.thehansindia.com/h-upload/2021/05/09/1600x960_1075280-covid-vaccine.jpg" width="120px">
+                <p>In a new high, India records 3,46,786 Covid-19 cases, 2,624 deaths in 24 hours</p>
+            </li>
+            <li>
+                <img src="https://cdn.dnaindia.com/sites/default/files/styles/full/public/2022/01/03/1012865-923719-who-chief.jpg" width="120px">
+                <p>India’s situation ‘devastating reminder’ of damage Covid-19 can cause: WHO chief</p>
+            </li>
+            <li>
+                <img src="https://ca-times.brightspotcdn.com/dims4/default/105e2a5/2147483647/strip/true/crop/800x450+0+0/resize/1200x675!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Ffb%2F2d%2Fcdd4ef082232fb740fc97f07834d%2Fsd-1523387904-95eb8qih9s-snap-image" width="120px">
+                <p>Court asks Delhi government to arrange tankers for liquid oxygen amid shortage</p>
+            </li>
+        </ul>
+    </article>
+    <div style="background-color: rgb(209, 198, 198);font-size: 12px;">
+        <p>Disclaimer: </p>
+        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </span>
+    </div>
+    <footer>
+        <p class="footerText">
+            Copyright © Hindustan Media Ventures Limited. All rights reserved
+        </p>
+    </footer>
+
+</body>
+</html>
